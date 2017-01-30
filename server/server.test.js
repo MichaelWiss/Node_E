@@ -1,7 +1,13 @@
 const request = require('supertest');
 const expect = require('expect');
 
+
+
+
 var app = require('./server').app;
+
+describe('Server', ()=> {
+	describe('#Get', ()=> {
 
 it('should return hello world response', (done) => {
 	request(app)
@@ -14,6 +20,9 @@ it('should return hello world response', (done) => {
 	})
 	.end(done);
 });
+});
+
+describe('#Users', ()=> {
 
 it('should return user object', (done) => {
 	request(app)
@@ -27,5 +36,8 @@ it('should return user object', (done) => {
 		age: 25
 	});
 })
+
 	.end(done);
+});
+});
 });

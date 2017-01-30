@@ -2,7 +2,10 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
-it('should add two numbers', ()=> {
+describe('Utils', ()=> {
+
+	describe('#add', () => {
+		it('should add two numbers', ()=> {
   var res = utils.add(33,11);
 
 expect(res).toBe(44).toBeA('number');
@@ -11,6 +14,9 @@ expect(res).toBe(44).toBeA('number');
 //   throw new Error(`Expected 44, but got ${res}.`)
 // }
 });
+
+	})
+	
 
 it('should async add two numbers', (done) => {
    utils.asyncAdd(4, 3, (sum) => {
@@ -31,7 +37,10 @@ it('should async square a number', (done)=> {
 		expect(product).toBe(25).toBeA('number');
 		done();
 	});
+  });
 });
+
+
 
 it('should have two strings', ()=> {
 	var user = {location: "Brooklyn", age: 45};
